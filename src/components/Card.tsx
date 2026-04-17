@@ -1,16 +1,15 @@
-import { HouseInterface } from '@/interface/house';
-
-const Card = ({ house }: { house: HouseInterface }) => {
+import { Property } from '@/domain/property/Property';
+const Card = ({ property }: { property: Property }) => {
   return (
     <div className="p-4 m-3 bg-white rounded-lg">
-      <img src={house.imageUrl} alt="property" />
+      <img src={property.image_url} alt="property" />
       <div className="p-6">
-        <h4 className="text-2xl font-bold cursor-pointer">{house.name}</h4>
-        <p>{house.location}</p>
-        <p>{house.type}</p>
+        <h4 className="text-2xl font-bold cursor-pointer">{property.name}</h4>
+        <p>{property.location}</p>
+        <p>{property.type}</p>
         <div className="mt-2">
           <span className="text-xl font-extrabold text-blue-600">
-            ${house.rent}
+            ${property.rent}
           </span>{' '}
           /M
         </div>
@@ -25,7 +24,9 @@ const Card = ({ house }: { house: HouseInterface }) => {
             <path d="M0 16L3 5V1a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v4l3 11v5a1 1 0 0 1-1 1v2h-1v-2H2v2H1v-2a1 1 0 0 1-1-1v-5zM19 5h1V1H4v4h1V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1h2V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1zm0 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1V6h-2v2a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6H3.76L1.04 16h21.92L20.24 6H19zM1 17v4h22v-4H1zM6 4v4h4V4H6zm8 0v4h4V4h-4z"></path>
           </svg>
           <p>
-            <span className="font-bold text-gray-900">{house.bathrooms}</span>{' '}
+            <span className="font-bold text-gray-900">
+              {property.bathrooms}
+            </span>{' '}
             Bedrooms
           </p>
         </div>
@@ -41,7 +42,9 @@ const Card = ({ house }: { house: HouseInterface }) => {
             ></path>
           </svg>
           <p>
-            <span className="font-bold text-gray-900">{house.bathrooms}</span>{' '}
+            <span className="font-bold text-gray-900">
+              {property.bathrooms}
+            </span>{' '}
             Bathrooms
           </p>
         </div>
