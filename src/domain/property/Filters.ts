@@ -1,4 +1,4 @@
-import { Schema } from 'effect';
+import { Schema } from "effect";
 
 export const FilterSchema = Schema.Struct({
   type: Schema.optional(Schema.String),
@@ -7,7 +7,7 @@ export const FilterSchema = Schema.Struct({
   min: Schema.optional(
     Schema.NumberFromString.pipe(
       Schema.filter((n) => !isNaN(n), {
-        message: () => 'Invalid min value',
+        message: () => "Invalid min value",
       })
     )
   ),
@@ -15,7 +15,7 @@ export const FilterSchema = Schema.Struct({
   max: Schema.optional(
     Schema.NumberFromString.pipe(
       Schema.filter((n) => !isNaN(n), {
-        message: () => 'Invalid max value',
+        message: () => "Invalid max value",
       })
     )
   ),

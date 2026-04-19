@@ -1,10 +1,10 @@
-import { NextResponse } from 'next/server';
-import { Effect, pipe, Schema } from 'effect';
+import { NextResponse } from "next/server";
+import { Effect, pipe, Schema } from "effect";
 
-import { PropertiesSchema } from '@/domain/property/Property';
-import { PropertyService } from '@/domain/property/Property.Service';
-import data from '@/data/property.json';
-import { FilterSchema } from '@/domain/property/Filters';
+import { PropertiesSchema } from "@src/domain/property/Property";
+import { PropertyService } from "@src/domain/property/Property.Service";
+import data from "@src/data/property.json";
+import { FilterSchema } from "@src/domain/property/Filters";
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
@@ -15,9 +15,7 @@ export async function GET(req: Request) {
       pipe(
         data,
         Schema.decodeUnknown(PropertiesSchema),
-        Effect.flatMap((properties) =>
-          PropertyService.filter(properties, filters)
-        )
+        Effect.flatMap((properties) => PropertyService.filter(properties, filters))
       )
     ),
     Effect.map((filtered) => NextResponse.json({ data: filtered })),
@@ -25,7 +23,7 @@ export async function GET(req: Request) {
       Effect.succeed(
         NextResponse.json(
           {
-            error: 'Invalid query params',
+            error: "Invalid query params",
             details: error,
           },
           { status: 400 }

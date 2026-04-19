@@ -1,4 +1,4 @@
-import { Schema } from 'effect';
+import { Schema } from "effect";
 
 export const PropertySchema = Schema.Struct({
   id: Schema.Number,
