@@ -53,11 +53,9 @@ const HeroSection = () => {
           <Link href="/properties">Browse Properties</Link>
         </Button>
       </div>
-
-      {/* Image */}
       <div className="relative w-full min-h-67">
         <Image
-          src="https://cdn.pixabay.com/photo/2017/07/08/06/48/sa-rapita-2483668_1280.jpg"
+          src="/hero-image.jpg"
           alt="Properties"
           fill
           className="object-cover"

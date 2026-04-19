@@ -6,10 +6,6 @@ const Footer = async () => {
   return (
     <footer>
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-4 max-md:flex-col sm:px-6 sm:py-6 md:gap-6 md:py-8">
-        <Link href="/">
-          <div className="flex items-center gap-3">{/* <Logo className='gap-3' /> */}</div>
-        </Link>
-
         <div className="flex items-center gap-5 whitespace-nowrap">
           {navlinks.map((navlink) => (
             <Link

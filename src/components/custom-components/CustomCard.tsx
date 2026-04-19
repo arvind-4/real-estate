@@ -4,7 +4,6 @@ import { Property } from "@src/domain/property/Property";
 const CustomCard = ({ property }: { property: Property }) => {
   return (
     <div className="p-4 m-3 bg-white rounded-lg">
-      {/* Image */}
       <div className="relative w-full h-48">
         <Image
           src={property.image_url}
@@ -14,17 +13,14 @@ const CustomCard = ({ property }: { property: Property }) => {
           sizes="(max-width: 768px) 100vw, 33vw"
         />
       </div>
-
       <div className="p-6">
         <h4 className="text-2xl font-bold cursor-pointer">{property.name}</h4>
         <p>{property.location}</p>
         <p>{property.type}</p>
-
         <div className="mt-2">
           <span className="text-xl font-extrabold text-blue-600">${property.rent}</span> /M
         </div>
       </div>
-
       <div className="flex justify-between p-4 text-gray-700 border-t border-gray-300">
         <div className="flex items-center">
           <svg
@@ -38,7 +34,6 @@ const CustomCard = ({ property }: { property: Property }) => {
             <span className="font-bold text-gray-900">{property.bedrooms}</span> Bedrooms
           </p>
         </div>
-
         <div className="flex items-center">
           <svg
             className="w-6 h-6 mr-3 text-gray-600 fill-current"

@@ -33,7 +33,6 @@ const AboutUs = ({ stats }: { stats: StatItem }) => {
         </div>
 
         <div className="relative mb-8 w-full max-lg:space-y-6 sm:mb-16 lg:mb-24">
-          {/* Image */}
           <div className="relative w-full h-[400px] sm:h-[500px]">
             <Image
               src="/about-us.webp"
@@ -43,8 +42,6 @@ const AboutUs = ({ stats }: { stats: StatItem }) => {
               sizes="(max-width: 1024px) 100vw, 75vw"
             />
           </div>
-
-          {/* Stats */}
           <div className="bg-background grid gap-10 rounded-md border p-8 sm:max-lg:grid-cols-2 lg:absolute lg:-bottom-25 lg:left-1/2 lg:w-3/4 lg:-translate-x-1/2 lg:grid-cols-4 lg:px-10 xl:w-max">
             {stats.map((stat, index) => (
               <div

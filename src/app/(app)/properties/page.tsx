@@ -15,14 +15,12 @@ type Props = {
 
 export default async function PropertyPage({ searchParams }: Props) {
   const params = await searchParams;
-  console.log("params", params);
   const data = await getProperties({
     type: params.type,
     location: params.location,
     min: params.min ? Number(params.min) : undefined,
     max: params.max ? Number(params.max) : undefined,
   });
-  console.log("data", data);
   return (
     <main>
       <PropertyFilter />
